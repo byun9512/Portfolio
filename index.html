@@ -1,0 +1,722 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0">
+		<title>junhui's portfolio</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" href="css/swiper-bundle.css">
+		
+		<script src="script/jquery-1.12.3.min.js"></script>
+		<script src="script/jquery-ui.min.js"></script>
+		<script src="script/main.js"></script>
+		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	</head>
+	<body>
+		<!-- 로딩 창 -->
+		<div id="loading">
+			<img src="images/logo_night.png" alt="로고 다크모드">
+			<ul id="loading_bar">
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		
+		<!-- 로그인 창 -->
+		<div id="login">
+			<img src="images/bg_day.jpg" alt="배경 라이트모드" class="day_ver">
+			<img src="images/bg_night.jpg" alt="배경 다크모드" class="night_ver">
+			<ul id="login_taskbar">
+				<li><img src="images/wifi_night.png" alt="wifi 다크모드"></li>
+				<li><img src="images/imac_night.png" alt="imac 다크모드"></li>
+				<li class="now_time"></li>
+				<li><img src="images/search_night.png" alt="search 다크모드"></li>
+				<li><img src="images/siri.png" alt="siri"></li>
+				<li><img src="images/list_night.png" alt="list 다크모드"></li>
+			</ul>
+			<ul id="login_img">
+				<div><img src="images/profile_picture.jpg" alt="프로필 사진"></div>
+				<li>Junhui's Portfolio</li>
+			</ul>
+			<ul id="login_ul">
+				<li></li><i><span>자면 안되요~</span></i>
+				<li></li><i><span>재시동 안되요~</span></i>
+				<li></li><i><span>종료 안되요~</span></i>
+			</ul>
+			<ul id="login_ul_name">
+				<li>잠자기</li>
+				<li>재시동</li>
+				<li>시스템 종료</li>
+			</ul>
+		</div>
+		
+		<!-- 모든 화면 -->
+		<div id="wrapper">
+			<!-- 상단 메뉴 -->
+			<div id="header">
+				<!-- 상단 메뉴 (왼쪽) -->
+				<ul id="header_logo">
+					<img src="images/logo_day.png" alt="로고 라이트모드" class="day_ver">
+					<img src="images/logo_night.png" alt="로고 다크모드" class="night_ver">
+				</ul>
+				<ul id="header_logo_sub">
+					<ul class="header_sub_contents">
+						<li>이 Portfolio에 관하여</li>
+						<div class="sub_line"></div>
+						<li>Profile</li>
+						<li>Skill</li>
+						<li>Address</li>
+						<li>Contact</li>
+						<div class="sub_line"></div>
+						<li>CGV</li>
+						<li>MINI</li>
+						<li>Kiehls</li>
+						<div class="sub_line"></div>
+						<li>Junhui's portfolio 로그아웃</li>
+					</ul>
+				</ul>
+				<ul id="header_menubar">
+					<li>Junhui's Portfolio</li>
+					<li>About</li>
+					<li>Works</li>
+					<li>Contact</li>
+				</ul>
+				
+				<!-- 상단 메뉴 (오른쪽) -->
+				<ul id="header_taskbar">
+					<li>
+						<img src="images/wifi_day.png" alt="wifi 라이트 모드" class="day_ver">
+						<img src="images/wifi_night.png"alt="wifi 다크 모드" class="night_ver">
+					</li>
+					<li>
+						<img src="images/imac_day.png" alt="imac 라이트 모드" class="day_ver">
+						<img src="images/imac_night.png" alt="imac 다크 모드" class="night_ver">
+					</li>
+					<li class="now_time"></li>
+					<li>
+						<img src="images/search_day.png" alt="search 라이트 모드" class="day_ver">
+						<img src="images/search_night.png" alt="search 다크 모드" class="night_ver">
+					</li>
+					<li><img src="images/siri.png" alt="siri"></li>
+					<li>
+						<img src="images/list_day.png" alt="list 라이트 모드" class="day_ver">
+						<img src="images/list_night.png" alt="list 다크 모드" class="night_ver">
+					</li>
+				</ul>
+				
+				<!-- 상단 메뉴 (이 Portfolio에 관하여) -->
+				<div id="about_portfolio">
+					<div id="about_portfolio_header">
+						<ul class="about_portfolio_header_controlbar">
+							<span></span><i>X</i>
+							<span></span><i>-</i>
+							<span></span><i><img src="images/maximize.png"></i>
+						</ul>
+						<ul class="about_portfolio_header_title"><li>이 Portfolio에 관하여</li></ul>
+					</div>
+					
+					<div id="about_portfolio_container">
+						<p>
+							제가 이 포트폴리오 형식을 선택하게 된 이유는<br>
+							Mac의 깔끔하고 세련된 느낌을 좋아하고<br>
+							웹으로 Mac을 재현해보면 어떨까하는 생각에 구상하게 되었습니다.<br>
+							<br>
+							Junhui's 포트폴리오에 특별한 기능으로는,
+							<br><br><br><br><br><br><br><br><br><br><br><br>
+							제가 맥북이 없어서 완벽하게 구현은 못했지만,<br>
+							최대한 비슷하게 구현하려 노력했습니다.<br>
+							즐겁게 감상해주셨으면 좋겟습니다!
+						</p>
+						
+						<div id="function">
+							<ul id="function_contents_one">
+								<span>Log Off 기능</span>
+								<ul>
+									<li>
+										이 기능은 상단의 메뉴 바에서 가장 하단의 위치하고 있으며<br>
+										버튼을 누르면, 로그오프 효과를 보실 수 있습니다.
+									</li>
+								</ul>
+							</ul>
+							<ul id="function_contents_two">
+								<span>Light / Dark 기능</span>
+								<ul>
+									<li>
+										이 기능은 하단의 Dock에서 Control 부분을 클릭하시면<br>
+										라이트 모드와 다크 모드를 사용해 보실 수 있습니다.
+									</li>
+								</ul>
+							</ul>
+							<ul id="function_contents_three">
+								<span>Launchpad 기능</span>이 있습니다.
+								<ul>
+									<li>
+										이 기능은 상단의 가장 우측에 있는 list 버튼을 누르면,<br>
+										카테고리 형식으로 앱들을 확인해 보실 수 있습니다.
+									</li>
+								</ul>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- 창 화면 (전체) -->
+			<div id="container">
+				<img src="images/bg_day.jpg" alt="배경 라이트 모드" class="day_ver">
+				<img src="images/bg_night.jpg" alt="배경 다크 모드" class="night_ver">
+				
+				<!-- 하단 독 -->
+				<div id="dock">
+					<ul class="basic_app">
+						<li><img src="images/pages.png" class="profile" alt="프로필"><p>Profile</p></li>
+						<li><img src="images/numbers.png" class="skill" alt="스킬"><p>Skill</p></li>
+						<li><img src="images/maps.png" class="address" alt="주소"><p>Address</p></li>
+						<li><img src="images/contacts.png" class="contact" alt="연락처"><p>Contact</p></li>
+						<li><img src="images/notes.png" class="memo" alt="메모"><p>Memo</p></li>
+						<li><img src="images/launchpad.png" class="launchpad" alt="런치패드"><p>Launchpad</p></li>
+						<li><img src="images/control.png" class="control" alt="모드 변경"><p>Control</p></li>
+					</ul>
+					<div class="middle_line"></div>
+					<ul class="portfolio_page">
+						<li><img src="images/cgv.png" class="cgv" alt="CGV 로고"><p>CGV</p></li>
+						<li><img src="images/mini_connect.png" class="mini" alt="MINI 로고"><p>MINI</p></li>
+						<li><img src="images/kiehls.png" class="kiehls" alt="Kiehls 로고"><p>Kiehls</p></li>
+						<li><img src="images/appstore.png" alt="앱스토어 로고"><p>현재 진행중...</p></li>
+					</ul>
+					
+					<!-- 하단 독 (컨트롤) -->
+					<div id="control">
+						<ul id="control_container">
+							<h4>Control(Mode)</h4>
+							<p>라이트 모드</p><img src="images/light_mode.png" alt="라이트 모드" class="light_mode">
+							<p>다크 모드</p><img src="images/dark_mode.png" alt="다크 모드" class="dark_mode">
+						</ul>
+					</div>
+				</div>
+					
+				<!-- 창 화면 (세부) -->
+				<div id="contents">
+					<!-- 창 화면 (상단) -->
+					<div id="contents_header">
+						<ul class="contents_header_controlbar">
+							<span></span><i>X</i>
+							<span></span><i>-</i>
+							<span></span><i><img src="images/maximize.png"></i>
+						</ul>
+						<ul class="contents_header_title"><li>About</li></ul>
+						<ul class="contents_header_category">
+							<li class="dark">Profile</li>
+							<li>Skill</li>
+							<li>Address</li>
+							<li>Contact</li>
+						</ul>
+					</div>
+					
+					<!-- 창 화면 (하단) -->
+					<div id="contents_container">
+						<!-- 프로필 -->
+						<ul id="profile_container">
+							<ul id="profile_container_rotate"></ul>
+							<ul id="profile_container_contents">
+								<div><img src="images/profile_picture.jpg"></div>
+								<ul class="profile_part">
+									<li><h1>Profile</h1></li>
+									<li><span>Name : </span>변준희</li>
+									<li><span>Age : </span>1995.12.16</li>
+									<li><span>Address : </span>경기도 안산시 거주</li>
+								</ul>
+								<ul class="experience_part">
+									<li><h1>Experience</h1></li>
+									<li><span>1995 </span>12월 16일 출생</li>
+									<li><span>2014 </span>안산 초지고등학교 졸업</li>
+									<li><span>2020 </span>장안대학교 인터넷정보통신과 졸업</li>
+									<li>
+										<span>2020.02.03 ~ 2020.06.29</span><br>
+										더조은컴퓨터아트학원 디지털웹디자인 및<br> 웹퍼블리셔 과정 수료
+									</li>
+								</ul>
+								<ul class="character_part">
+									<li><h1>Character</h1></li>
+									<li>#성실함  #꼼꼼함</li>
+									<li>#오픈 마인드</li>
+									<li>#원활한 커뮤니케이션</li>
+								</ul>
+								<ul class="footer_part">
+									<li>
+										All content on this site is not commercially available. 
+										© 2020- Junhui Byun. All Rights Reserved.
+									</li>
+								</ul>
+							</ul>
+						</ul>
+						
+						<!-- 스킬 -->
+						<ul id="skill_container">
+							<ul id="skill_container_rotate"></ul>
+							<ul id="skill_container_contents">
+								<ul class="skill_logo">
+									<li><img src="images/ps.png" alt="포토샵"></li>
+									<li><img src="images/ai.png" alt="일러스트"></li>
+									<li><img src="images/html.png" alt="HTML"></li>
+									<li><img src="images/css.png" alt="CSS"></li>
+									<li><img src="images/js.png" alt="자바스크립트"></li>
+									<li><img src="images/jquery.png" alt="제이쿼리">
+								</ul>	
+								<ul class="skill_name">
+									<p>Photoshop</p>
+									<p>Illustrator</p>
+									<p>HTML</p>
+									<p>CSS</p>
+									<p>Javascript</p>
+									<p>Jquery</p>
+								</ul>
+								<ul class="skill_bar_blank">
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+								</ul>	
+								<ul class="skill_bar">
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+								</ul>	
+								<ul class="skill_percent">
+									<p><span></span> %</p>
+									<p><span></span> %</p>
+									<p><span></span> %</p>
+									<p><span></span> %</p>
+									<p><span></span> %</p>
+									<p><span></span> %</p>
+								</ul>
+							</ul>
+						</ul>
+						
+						<!-- 주소 -->
+						<ul id="address_container">
+							<ul id="address_container_rotate"></ul>
+							<ul id="address_container_contents">
+								<h2>더조은컴퓨터아트학원 수원캠퍼스</h2>
+								<p>
+									경기 수원시 팔달구 덕영대로 899 세진브론즈빌<br>
+									<small>[지번] 매산로1가 11-9 세진브론즈빌 3F (우) 16455</small>
+								</p>
+								<p>031-253-5225</p>
+								<p>
+									평일 09:00 ~ 22:00<br>
+									주말 10:00 ~ 17:00
+								</p>
+								<p class="homepage"><a href="http://sw.tjoeun.co.kr/">홈페이지</a></p>
+								<p>
+									더조은컴퓨터아트학원의 교육과정은 항상 변화하는 <br>
+									미래의 트랜드를 주도하며 이끌어 나갈 디자이너와 <br>
+									개발자를 양성하기 위하여 현재의 디자인, 기술적...
+								</p>
+								<ul class="address_icon">
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<img src="images/map_point.png">
+								</ul>
+							</ul>
+							<ul class="address_map"></ul>
+						</ul>
+						
+						<!-- 연락처 -->
+						<ul id="contact_container">
+							<img src="images/sub_bg1_day.jpeg" alt="서브배경 라이트 모드" class="day_ver">
+							<img src="images/sub_bg1_night.jpeg" alt="서브배경 다크 모드" class="night_ver">
+							<ul id="contact_container_contents">
+								<ul class="contact_comment">
+									<li>
+										언제나 개성 넘치고 창의적인 생각으로<br>
+										노력하는 퍼블리셔가 되겠습니다!<br>
+										<br>
+										언제든지 연락주세요. 감사합니다!
+									</li>
+								</ul>
+								<ul class="contact_info">
+									<li><span>Email : </span>byun9512@naver.com</li>
+									<li><span>Phone : </span>010-9688-4069</li>
+								</ul>
+							</ul>
+						</ul>
+					</div>
+				</div>
+				
+				<!-- 하단 독 (런치패드) -->
+				<div class="swiper-container">
+					<img src="images/bg_day.jpg" alt="배경 라이트 모드" class="day_ver">
+					<img src="images/bg_night.jpg" alt="배경 다크 모드" class="night_ver">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<article>
+								<ul class="slide_app_one">
+									<li><img src="images/safari.png" alt="Safari"><a>Safari</a></li>
+									<li><img src="images/mail.png" alt="Mail"><a>Mail</a></li>
+									<li><img src="images/photos.png" alt="사진"><a>Picture</a></li>
+									<li><img src="images/contacts.png" class="contact" alt="연락처"><a>Contact</a></li>
+									<li><img src="images/calendar.png" alt="캘린더"><a>Calendar</a></li>
+									<li><img src="images/reminders.png" alt="미리 알림"><a>Reminders</a></li>
+									<li><img src="images/notes.png" class="memo" alt="메모"><a>Notes</a></li>
+								</ul>
+
+								<ul class="slide_app_two">
+									<li><img src="images/news.png" alt="뉴스"><a>News</a></li>
+									<li><img src="images/maps.png" class="address" alt="주소"><a>Address</a></li>
+									<li><img src="images/preview.png" alt="미리보기"><a>Preview</a></li>
+									<li><img src="images/pages.png" class="profile" alt="프로필"><a>Profile</a></li>
+									<li><img src="images/numbers.png" class="skill" alt="스킬"><a>Numbers</a></li>
+									<li><img src="images/keynote.png" alt="Keynote"><a>Keynote</a></li>
+									<li><img src="images/imovie.png" alt="iMovie"><a>iMovie</a></li>
+								</ul>
+								
+								<ul class="slide_app_three">
+									<li><img src="images/garageband.png" alt="GarageBand"><a>GarageBand</a></li>
+									<li><img src="images/iTunes.png" alt="음악"><a>Music</a></li>
+									<li><img src="images/messages.png" alt="메시지"><a>Messages</a></li>
+									<li><img src="images/facetime.png" alt="FaceTime"><a>FaceTime</a></li>
+									<li><img src="images/calculator.png" alt="계산기"><a>Calculator</a></li>
+									<li><img src="images/books.png" alt="도서"><a>Books</a></li>
+									<li><img src="images/appstore.png" alt="App Store"><a>App Store</a></li>
+								</ul>
+							</article>
+						</div>
+						
+						<div class="swiper-slide">
+							<article>
+								<ul class="slide_app_four">
+									<li><img src="images/cgv.png" class="cgv" alt="CGV 로고"><a>CGV</a></li>
+									<li><img src="images/mini_connect.png" class="mini" alt="MINI 로고"><a>MINI</a></li>
+									<li><img src="images/kiehls.png" class="kiehls" alt="Kiehls 로고"><a>Kiehls</a></li>
+								</ul>
+							</article>
+						</div>
+						
+						<div class="swiper-slide">
+							<article>
+								<p>앱 없음</p>
+							</article>
+						</div>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+				
+				<!-- 크롬 화면 (세부) -->
+				<div id="redesign">
+					<!-- 크롬 화면 (상단) -->
+					<div id="chrome_header">
+						<ul class="chrome_header_controlbar">
+							<span></span><i>X</i>
+							<span></span><i>-</i>
+							<span></span><i><img src="images/maximize.png"></i>
+						</ul>
+						<ul class="chrome_header_category">
+							<li class="tab_one"></li>
+							<li class="tab_two"></li>
+							<li class="tab_three"></li>
+							<span class="tab_plus"></span>
+						</ul>
+						<ul class="chrome_header_category_name">
+							<a class="cgv_tab" href="#cgv_container">
+								<img src="images/cgv.png" alt="CGV 파비콘"><b>CGV </b><strong>Redesign</strong>
+								<span>X</span>
+							</a>
+							<a class="mini_tab" href="#mini_container">
+								<img src="images/mini_connect.png" alt="MINI 파비콘"><b>MINI </b><strong>Redesign</strong>
+								<span>X</span>
+							</a>
+							<a class="kiehls_tab" href="#kiehls_container">
+								<img src="images/kiehls.png" alt="Kiehls 파비콘"><b>Kiehls </b><strong>Redesign</strong>
+								<span>X</span>
+							</a>
+						</ul>
+					</div>
+					
+					<div id="chrome_searchbar">
+						<ul class="chrome_searchbar_icon">
+							<img src="images/back.png" alt="뒤로 가기">
+							<img src="images/forward.png" alt="앞으로 가기">
+							<img src="images/refresh.png" alt="새로고침">
+						</ul>
+						<img src="images/search.png" class="search_icon">
+						<input type="search" class="search_bar">
+						<img src="images/list.png" class="list_icon">
+					</div>
+					
+					<!-- 크롬 화면 (하단) -->
+					<div id="chrome_container">
+						<!-- CGV -->
+						<ul id="cgv_container">
+							<ul id="cgv_container_contents">
+								<h1><img src="images/cgv_logo.png"></h1>
+								<span><img src="images/cgv_fullsize.png" alt="CGV 풀사이즈"></span>
+								
+								<ul id="cgv_intro">
+									<li>
+										<h1>CGV</h1>
+										<i></i>
+										<p>Web Redesign</p><span>HTML5 / CSS3 / JQUERY</span>
+									</li>
+								</ul>
+								
+								<ul id="cgv_concept">
+									<li>
+										<h1>Concept</h1>
+										<i></i>
+										<p>
+											CGV 로고를 주축으로 최대한 곡선형의 디자인을 목적으로 하였고,<br>
+											기존의 베이지 톤의 색감에서 블랙 톤으로 바꿔, 좀 더 안정감 있도록 했습니다.
+										</p>
+									</li>
+								</ul>
+								
+								<ul id="cgv_typography">
+									<li>
+										<h1>Typography</h1>
+										<i></i>
+										<aside>
+											<h2>영문</h2>
+											<p>
+												<strong>Nanum<br> Gothic</strong><br>
+												Regular 400<br>
+												<b>Bold 700</b>
+											</p>
+										</aside>
+										<aside>
+											<h2>한글</h2>
+											<p>
+												<strong>나눔 고딕</strong><br>
+												Regular 400<br>
+												<b>Bold 700</b>
+											</p>
+										</aside>
+									</li>
+								</ul>
+								
+								<ul id="cgv_color">
+									<li>
+										<h1>Color</h1>
+										<i></i>
+										<p>
+											CGV의 주조색인 빨간 계열과 주황 계열을 이용하였으며,<br>
+											빨간 계열은 보이는 디자인, 주황 계열은 Hover쪽으로 사용했습니다.<br>
+											배경 색은 빨간 계열과 잘 어울리는 검은 계열로 사용하고 글자를 하얀 계열로 맞췄습니다.	
+										</p>
+										<ul class="cgv_color_frame">
+											<li><span>#e71a0f</span></li>
+											<li><span>#e98c01</span></li>
+											<li><span>#141414</span></li>
+											<li><span>#ffffff</span></li>
+											<li><span>#fdfcf0</span></li>
+										</ul>
+									</li>
+								</ul>
+								
+								<ul id="cgv_publishing">
+									<li>
+										<h1>Publishing</h1>
+										<i></i>
+										<p>
+											첫 화면의 메인 슬라이드는 수동일 때 페이드 인/아웃 방식, 자동으론 setInterval를 이용하였습니다.<br>
+											영화 선택 부분과 공지사항 부분은 each문으로 이미지를 퍼뜨린 후 overflow를 이용하여 원하는 부분만 보이게 만들었습니다.
+										</p>
+									</li>
+								</ul>
+								<button><a href="https://byun9512.github.io/CGV/index.html">웹페이지 바로가기</a></button>
+							</ul>
+						</ul>
+						
+						<!-- MINI -->
+						<ul id="mini_container">
+							<ul id="mini_container_contents">
+								<h1><img src="images/mini_logo.png" alt="MINI 로고"></h1>
+								<span><img src="images/mini_fullsize.png" alt="MINI 풀사이즈"></span>
+								
+								<ul id="mini_intro">
+									<li>
+										<h1>MINI</h1>
+										<i></i>
+										<p>Web Redesign</p><span>HTML5 / CSS3 / JQUERY</span>
+									</li>
+								</ul>
+								
+								<ul id="mini_concept">
+									<li>
+										<h1>Concept</h1>
+										<i></i>
+										<p>
+											MINI의 날카로운 문양을 베이스로 디자인을 구성했고,<br>
+											각 차를 풀스크린 슬라이드 방식을 이용해 소개하는 방식으로 구상했습니다.<br>
+											각 차의 설명은 서브 창을 만들어 소개하도록 만들었습니다.
+										</p>
+									</li>
+								</ul>
+								
+								<ul id="mini_typography">
+									<li>
+										<h1>Typography</h1>
+										<i></i>
+										<aside>
+											<h2>영문</h2>
+											<p>
+												<strong>Roboto</strong><br>
+												Regular 400<br>
+												<b>Bold 700</b>
+											</p>
+										</aside>
+										<aside>
+											<p>
+												<strong>Sawarabi Mincho</strong><br>
+												Regular 400<br>
+											</p>
+										</aside>
+										<aside>
+											<p>
+												<strong>Gothic A1</strong><br>
+												Regular 400<br>
+												<b>Bold 700</b>
+											</p>
+										</aside>
+										<aside>
+										<h2>한글</h2>
+											<p>
+												<strong>맑은 고딕</strong><br>
+												Regular 400<br>
+												<b>Bold 700</b>
+											</p>
+										</aside>
+									</li>
+								</ul>
+								
+								<ul id="mini_color">
+									<li>
+										<h1>Color</h1>
+										<i></i>
+										<p>
+											전체적으로 어두운 톤을 부여하고 그에 대비되는 색으로 글자색을 부여했습니다.<br>
+											스크롤 사이사이에 각 차에 해당하는 포인트 컬러를 부여하여 강조시켰습니다.
+											
+										</p>
+										<ul class="mini_color_frame">
+											<li><span>#000000</span></li>
+											<li><span>#ffffff</span></li>
+											<li><span>#e71a0f</span></li>
+											<li><span>#c22102</span></li>
+											<li><span>#6b7659</span></li>
+											<li><span>#001bb6</span></li>
+											<li><span>#a72b2a</span></li>
+											<li><span>#fdfcf0</span></li>
+										</ul>
+									</li>
+								</ul>
+								
+								<ul id="mini_publishing">
+									<li>
+										<h1>Publishing</h1>
+										<i></i>
+										<p>
+											첫 화면인 메인 슬라이드는 페이드 인/아웃 방식으로 작동하며, 두번째 화면인 갤러리는 delay를 이용해보았습니다.<br>
+											오프셋을 이용한 섹션의 스크롤 이동을 구현하였으며, 메인 섹션과 서브 섹션을 나누어 설명하였습니다.
+										</p>
+									</li>
+								</ul>
+								<button><a href="https://byun9512.github.io/MINI/index.html">웹페이지 바로가기</a></button>
+							</ul>
+						</ul>
+						
+						<!-- Kiehls -->
+						<ul id="kiehls_container">
+							<ul id="kiehls_container_contents">
+								<h1><img src="images/kiehls_logo.png" alt="Kiehls 로고"></h1>
+								<span><img src="images/kiehls_fullsize.png" alt="Kiehls 풀사이즈"></span>
+								
+								<ul id="kiehls_intro">
+									<li>
+										<h1>Kiehls</h1>
+										<i></i>
+										<p>Web Redesign</p><span>HTML5 / CSS3 / JQUERY</span>
+									</li>
+								</ul>
+								
+								<ul id="kiehls_concept">
+									<li>
+										<h1>Concept</h1>
+										<i></i>
+										<p>
+											키엘의 블랙 & 화이트 컨셉은 그대로 유지한 채 디자인 적인 측면을 바꿔봤습니다.<br>
+											또한, 각 제품의 색깔을 최대한 강조시켜서 구성했습니다.
+										</p>
+									</li>
+								</ul>
+								
+								<ul id="kiehls_typography">
+									<li>
+										<h1>Typography</h1>
+										<i></i>
+										<aside>
+											<h2>영문</h2>
+											<p>
+												<strong>Raleway</strong><br>
+												Thin 100<br>
+											</p>
+										</aside>
+										<aside>
+											<h2>한글</h2>
+											<p>
+												<strong>Noto Sans KR</strong><br>
+												Thin 100<br>
+												Regular 400<br>
+												<b>Bold 700</b>
+											</p>
+										</aside>
+									</li>
+								</ul>
+								
+								<ul id="kiehls_color">
+									<li>
+										<h1>Color</h1>
+										<i></i>
+										<p>
+											전체적인 배경은 하얀 계열로 유지하면서 포인트로 검은색 UI로 포인트를 줬습니다.<br>
+											제품의 색감이 서로 달라 보는 즐거움이 생기도록 만들었습니다.
+											
+										</p>
+										<ul class="kiehls_color_frame">
+											<li><span>#000000</span></li>
+											<li><span>#ffffff</span></li>
+											<li><span>#fcfcfc</span></li>
+											<li><span>#ff9800</span></li>
+											<li><span>#0d96e6</span></li>
+											<li><span>#aa1c1b</span></li>
+										</ul>
+									</li>
+								</ul>
+								
+								<ul id="kiehls_publishing">
+									<li>
+										<h1>Publishing</h1>
+										<i></i>
+										<p>
+											슬라이드의 틀을 없애서 좀 더 개방적으로 만들었으며,<br>
+											신제품과 베스트 상품은 비순환 슬라이드를 구상했습니다.
+											
+										</p>
+									</li>
+								</ul>
+								<button><a href="https://byun9512.github.io/Kiehls/index.html">웹페이지 바로가기</a></button>
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

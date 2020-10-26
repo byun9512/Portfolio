@@ -1,0 +1,787 @@
+@import url(reset.css); @import url(contents.css); @import url(chrome.css);
+@font-face
+{
+	font-family:'AppleSDGothicNeoR';
+	src:url(../family/AppleSDGothicNeo/AppleSDGothicNeoR.ttf) format('truetype');
+}
+body, html {cursor:url(../images/mac_cursor.png), auto; overflow:hidden;}
+body {background:#000;}
+/*
+	로딩 창 : 20000
+	로그인 창 : 10000
+	상단 메뉴 : 2000
+	창 화면 : 500
+	배경 : 100
+	독 : 1000
+	독 (런치패드) : 600
+	독 (컨트롤) : 700
+	화살표 : 3000
+	크롬 화면 : 1500
+*/
+
+/* ─── 로딩 창 ─── */
+#loading
+{
+	width:100%; height:100%;
+	position:fixed; left:0; top:0;
+	background:#000;
+	z-index:20000;
+}
+	#loading img {width:140px; position:absolute; left:46%; top:320px;}
+
+	#loading_bar {position:absolute; left:43%; top:570px;}
+	#loading_bar li {width:260px; height:8px; position:absolute; border-radius:20px;}
+	#loading_bar li:nth-of-type(1) {background:#3c3c3c;}
+	#loading_bar li:nth-of-type(2) {width:0; background:#fff;}
+
+/* ─── 로그인 창 ─── */
+#login
+{
+	width:100%; height:100%;
+	position:fixed; left:0; top:0;
+	z-index:10000;
+}
+	#login>img
+	{
+		width:100%; height:1177px;
+		position:absolute; left:0; top:-200px;
+		background-size:cover;
+		-webkit-filter: blur(10px);
+		-moz-filter: blur(10px);
+		-o-filter: blur(10px);
+		-ms-filter: blur(10px);
+		filter: blur(10px);
+		transform:scale(1.02);
+	}
+	#login_taskbar {position:absolute; right:20px; top:6px;}
+	#login_taskbar li {position:absolute;}
+	#login_taskbar li:nth-of-type(1) {right:272px;}
+	#login_taskbar li:nth-of-type(2) {right:246px;}
+	.now_time {width:128px; right:84px; margin:2px; transition:all 0.7s;}
+	#login_taskbar li:nth-of-type(4) {right:80px;}
+	#login_taskbar li:nth-of-type(5) {right:50px;}
+	#login_taskbar li:nth-of-type(6) {right:20px;}
+	#login_taskbar li img
+	{
+		width:22px;
+		position:absolute;
+		cursor:url(../images/mac_cursor_pointer.png), auto;
+	}
+
+	#login_img {position:absolute; left:47.5%; top:340px;}
+	#login_img>div
+	{
+		width:100px; height:100px;
+		border-radius:100px;
+		overflow:hidden;
+	}
+	#login_img>div>img {width:100px; cursor:url(../images/mac_cursor_pointer.png), auto;}
+	#login_img li
+	{
+		position:relative; left:-36px;
+		font-size:24px;
+		font-weight:bold;
+		padding-top:20px;
+	}
+	
+	#login_ul {position:absolute; left:41.5%; bottom:160px;}
+	#login_ul li
+	{
+		width:40px; height:40px; float:left;
+		background:url(../images/login_ul.png) no-repeat;
+		cursor:url(../images/mac_cursor_pointer.png), auto;
+		margin-right:100px;
+		transition:all 0.5s;
+	}
+	#login_ul li:nth-of-type(2) {background-position:-40px 0;}
+	#login_ul li:nth-of-type(3) {background-position:-80px 0;}
+	#login_ul li:hover {transform:scale(1.1);}
+	#login_ul i
+	{
+		width:150px;
+		position:absolute; left:-26px; top:90px;
+		font-size:20px;
+		font-weight:bold;
+		font-style:normal;
+		overflow:hidden;
+	}
+	#login_ul i:nth-of-type(2) {left:104px;}
+	#login_ul i:nth-of-type(3) {left:254px;}
+	#login_ul i span {position:relative; top:-30px;}
+	
+	#login_ul_name {position:absolute; left:42%; bottom:120px;}
+	#login_ul_name li {float:left; margin-right:98px;}
+	#login_ul_name li:nth-of-type(3) {margin-left:-14px;}
+	
+/* ─── 상단 메뉴 ─── */
+#header
+{
+	width:100%; height:36px;
+	position:fixed; background:rgba(40,40,40,0.5);
+	box-shadow:1px 1px 6px 0px #141414;
+	z-index:500;
+	transition:all 0.5s;
+}
+	/* ─── 상단 메뉴 (왼쪽) ─── */
+	#header_logo {width:40px; height:30px; margin-left:10px; padding:3px 10px; transition:all 0.3s;}
+	#header_logo img
+	{
+		width:22px;
+		position:absolute; left:30px; top:6px;
+		cursor:url(../images/mac_cursor_pointer.png), auto;
+	}
+	#header_logo:hover {background:#0556c3;}
+	
+	#header_logo_sub
+	{
+		width:280px; height:300px;
+		position:absolute; left:0px; top:38px;
+		overflow:hidden;
+		display:none;
+	}
+	.header_sub_contents
+	{
+		width:260px;
+		position:absolute; left:10px; top:-26px;
+		background:rgba(40,40,40,0.5);
+		box-shadow:1px 1px 6px 0px #141414;
+		border-radius:10px;
+		overflow:hidden;
+	}
+	.header_sub_contents li
+	{
+		font-size:18px;
+		cursor:url(../images/mac_cursor_pointer.png), auto;
+		padding:3px 30px 0px 24px;
+	}
+	.header_sub_contents li:nth-of-type(1) {padding-top:30px;}
+	.header_sub_contents li:nth-of-type(9) {padding-bottom:4px;}
+	.header_sub_contents li:hover {background:#0556c3;}
+	.sub_line {width:260px; height:1px; background:#505050; margin:5px 0;}
+	
+	#header_menubar 
+	{
+		position:absolute; left:70px; top:0;
+		cursor:url(../images/mac_cursor_pointer.png), auto;
+	}
+	#header_menubar li {float:left; padding:8px; transition:all 0.3s;}
+	#header_menubar li:nth-of-type(1) {font-weight:bold;}
+	#header_menubar li:hover {background:#0556c3;}
+	
+	/* ─── 상단 메뉴 (오른쪽) ─── */
+	#header_taskbar {position:absolute; right:20px; top:6px;}
+	#header_taskbar li {position:absolute;}
+	#header_taskbar li:nth-of-type(1) {right:272px;}
+	#header_taskbar li:nth-of-type(2) {right:246px;}
+	.now_time {width:128px; right:84px; margin:2px; transition:all 0.7s;}
+	#header_taskbar li:nth-of-type(4) {right:80px;}
+	#header_taskbar li:nth-of-type(5) {right:50px;}
+	#header_taskbar li:nth-of-type(6) {right:20px;}
+	#header_taskbar li img
+	{
+		width:22px;
+		position:absolute;
+		cursor:url(../images/mac_cursor_pointer.png), auto;
+	}
+
+/* ─── 상단 메뉴 (이 Portfolio에 관하여) ─── */
+#about_portfolio {position:absolute; left:300px; top:220px; z-index:500; display:none;}
+
+	/* ─── 이 Portfolio에 관하여 (상단) ─── */
+	#about_portfolio_header
+	{
+		width:500px; height:56px;
+		position:relative;
+		background:#323232;
+		border-top:1px solid rgba(200,200,200,0.4);
+		border-bottom:1px solid rgba(0,0,0,0.4);
+		border-top-left-radius:10px;
+		border-top-right-radius:10px;
+		transition:all 0.5s;
+	}
+	.about_portfolio_header_controlbar
+	{
+		width:69px; height:16px;
+		position:absolute; left:0; top:0;
+		margin-top:20px;
+		margin-left:18px;
+	}
+	.about_portfolio_header_controlbar span
+	{
+		width:15px; height:15px; float:left;
+		background:rgba(100,100,100,0.8);
+		border:1px solid #3c3c3c;
+		border-radius:50px;
+		cursor:url(../images/mac_cursor_pointer.png), auto;
+		margin-right:9px;
+	}
+	.about_portfolio_header_controlbar span:nth-of-type(1) {background:#ff4f4b;}
+	.about_portfolio_header_controlbar span:nth-of-type(2) {background:#e3b826;}
+	.about_portfolio_header_controlbar span:nth-of-type(3) {background:#49ba26; margin-right:0;}
+	
+	.about_portfolio_header_controlbar i
+	{
+		width:10px; height:10px;
+		position:absolute;
+		color:#000;
+		font-style:normal;
+		font-weight:bold;
+		cursor:url(../images/mac_cursor_pointer.png), auto;
+		padding:3px;
+		display:none;
+	}
+	.about_portfolio_header_controlbar i:nth-of-type(1) {left:2px; top:0px; font-size:12px;}
+	.about_portfolio_header_controlbar i:nth-of-type(2) {left:28px; top:-4px; font-size:18px;}
+	.about_portfolio_header_controlbar i:nth-of-type(3) {left:54px; top:-4px;}
+	.about_portfolio_header_controlbar i:nth-of-type(3) img {width:7px;}
+	
+	.about_portfolio_header_title {position:absolute; left:164px; top:16px;}
+	.about_portfolio_header_title li {font-size:20px; font-weight:bold;}
+	
+	/* ─── 이 Portfolio에 관하여 (하단) ─── */
+	#about_portfolio_container
+	{
+		width:500px; height:470px;
+		position:relative;
+		background:#2d2d2d;
+		border-left:1px solid rgba(100,100,100,0.4);
+		border-bottom-left-radius:10px;
+		border-bottom-right-radius:10px;
+		box-shadow:2px 2px 10px 0px #000;
+		transition:all 0.5s;
+	}
+	#about_portfolio_container p {padding:28px;}
+	
+	#function {position:absolute; left:28px; top:170px;}
+	#function span
+	{
+		font-size:20px;
+		font-weight:bold;
+		cursor:url(../images/mac_cursor_pointer.png), auto;
+		margin-right:5px;
+	}
+	#function_contents_one span {color:#ff4f4b;}
+	#function_contents_two span {color:#e3b826;}
+	#function_contents_three span {color:#49ba26;}
+	#function ul>ul {height:0px; display:none;}
+
+/* ─── 창 화면 (전체) ─── */
+#container
+{
+	width:100%; height:1080px;
+	position:absolute;
+}
+	#container>img
+	{
+		width:100%; height:1080px;
+		position:absolute;
+		background-attachment:no-repeat;
+		background-size:cover;
+		z-index:100;
+	}
+	
+/* ─── 하단 독 ─── */
+#dock
+{
+	width:620px; height:66px;
+	position:fixed;
+	background:rgba(100,100,100,0.3);
+	border:2px solid rgba(130,130,130,0.3);
+	border-radius:4px;
+	z-index:1000;
+}
+	#dock li {position:relative; top:14px; margin-left:10px;}
+	#dock li img {cursor:url(../images/mac_cursor_pointer.png), auto; transition:all 0.3s;}
+	#dock li img:hover {transform:scale(1.2);}
+	#dock li p {display:none;}
+	
+	.basic_app {position:absolute; left:5px; top:-2px;}
+	.basic_app li {float:left;}
+	.basic_app li img {width:44px;}
+	.basic_app li p
+	{
+		position:absolute; top:-80px; left:-20px;
+		background:rgba(40,40,40,0.9);
+		font-size:20px;
+		font-weight:bold;
+		border-radius:10px;
+		padding:8px 14px;
+	}
+	.basic_app li:nth-of-type(2) p {left:-12px;}
+	.basic_app li:nth-of-type(3) p {left:-30px;}
+	.basic_app li:nth-of-type(6) p {left:-34px;}
+	.basic_app li:nth-of-type(7) p {left:-24px;}
+	.basic_app li p:after
+	{
+		width:0;
+		content:'';
+		position:absolute; left:30px; top:40px;
+		border-style:solid;
+		border-width:14px 10px 0 10px;
+		border-color:rgba(40,40,40,0.9) transparent;
+		z-index:100;
+	}
+	.basic_app li:nth-of-type(2) p:after {left:22px;}
+	.basic_app li:nth-of-type(3) p:after {left:38px;}
+	.basic_app li:nth-of-type(4) p:after {left:36px;}
+	.basic_app li:nth-of-type(6) p:after {left:46px;}
+	.basic_app li:nth-of-type(7) p:after {left:36px;}
+	.basic_app li p.changed:after {border-color:rgba(230,230,230,0.9) transparent;}
+	
+	.portfolio_page {position:absolute; left:405px; top:2px;}
+	.portfolio_page li {float:left;}
+	.portfolio_page li img {width:37px; margin-right:4px;}
+	.portfolio_page li p
+	{
+		position:absolute; top:-80px; left:-16px;
+		background:rgba(40,40,40,0.9);
+		font-size:20px;
+		font-weight:bold;
+		border-radius:10px;
+		padding:8px 14px;
+	}
+	.portfolio_page li:nth-of-type(3) p {left:-18px;}
+	.portfolio_page li:nth-of-type(4) p {width:106px; left:-50px;}
+	.portfolio_page li p:after
+	{
+		width: 0;
+		content: '';
+		position: absolute; left:24px; top:40px;
+		border-style: solid;
+		border-width: 14px 10px 0 10px;
+		border-color: rgba(40,40,40,0.9) transparent;
+		z-index:100;
+	}
+	.portfolio_page li:nth-of-type(3) p:after {left:28px;}
+	.portfolio_page li:nth-of-type(4) p:after {left:56px;}
+	.portfolio_page li p.changed:after {border-color:rgba(230,230,230,0.9) transparent;}
+
+	.middle_line
+	{
+		width:2px; height:44px;
+		position:absolute; left:395px; top:10px;
+		background:rgba(130,130,130,0.3);
+	}
+	
+/* ─── 하단 독 (컨트롤) ─── */
+#control
+{
+	width:320px; height:220px;
+	position:absolute; left:200px; bottom:90px;
+	border-radius:10px;
+	z-index:700;
+	overflow:hidden;
+}
+	#control_container
+	{
+		width:280px; height:140px;
+		position:relative; left:0; bottom:-230px;
+		background:rgba(40,40,40,0.9);
+		border-radius:10px;
+		padding:20px;
+		transition:all 0.5s;
+	}
+	#control_container:after
+	{
+		width:0;
+		content:'';
+		position:absolute; left:130px; top:180px;
+		border-style:solid;
+		border-width:34px 30px 0 30px;
+		border-color:rgba(40,40,40,0.9) transparent;
+		z-index:100;
+	}
+	#control_container.changed:after {border-color:rgba(230,230,230,0.9) transparent;}
+	#control_container>img
+	{
+		width:100px;
+		position:absolute; top:50px;
+		cursor:url(../images/mac_cursor_pointer.png), auto;
+	}
+	#control_container>img:nth-of-type(1) {left:40px;}
+	#control_container>img:nth-of-type(2) {left:180px;}
+	#control_container p {position:absolute; top:136px; font-size:20px; font-weight:bold;}
+	#control_container p:nth-of-type(1) {left:42px;}
+	#control_container p:nth-of-type(2) {left:192px;}
+	#control_container h4
+	{
+		font-size:18px;
+		text-align:center;
+		margin-left:0;
+		margin-top:-14px;
+		padding-bottom:20px;
+	}
+	#control_container b>img {position:absolute; left:130px; bottom:-30px;}
+
+/* ─── 하단 독 (런치패드) ─── */
+.swiper-slide article ul {width:1400px; height:230px;}
+.swiper-slide article ul li {width:200px; height:200px; float:left; position:relative;}
+.swiper-slide article ul li>img {width:90px;}
+.swiper-slide article ul li>a
+{
+	width:100px;
+	position:absolute; left:50px; top:190px;
+	text-align:center;
+	font-size:20px;
+}
+
+/* ─── 라이트 모드 / 다크 모드 ─── */
+.day_ver {display:none;}
+	
+/* ─── 창 화면 (세부) ─── */
+#contents
+{
+	width:1000px; height:600px;
+	position:relative; top:150px;
+	z-index:300;
+	display:none;
+}
+	/* ─── 창 화면 (상단) ─── */
+	#contents_header
+	{
+		width:1000px; height:56px;
+		position:relative;
+		background:#323232;
+		border-top:1px solid rgba(200,200,200,0.4);
+		border-bottom:1px solid rgba(0,0,0,0.4);
+		border-top-left-radius:10px;
+		border-top-right-radius:10px;
+		transition:all 0.5s;
+	}
+	.contents_header_controlbar
+	{
+		width:69px; height:16px;
+		position:absolute; left:0; top:0;
+		margin-top:20px;
+		margin-left:18px;
+	}
+	.contents_header_controlbar span
+	{
+		width:15px; height:15px; float:left;
+		background:rgba(100,100,100,0.8);
+		border:1px solid #3c3c3c;
+		border-radius:50px;
+		cursor:url(../images/mac_cursor_pointer.png), auto;
+		margin-right:9px;
+	}
+	.contents_header_controlbar span:nth-of-type(1) {background:#ff4f4b;}
+	.contents_header_controlbar span:nth-of-type(2) {background:#e3b826;}
+	.contents_header_controlbar span:nth-of-type(3) {background:#49ba26; margin-right:0;}
+	
+	.contents_header_controlbar i
+	{
+		width:10px; height:10px;
+		position:absolute;
+		color:#000;
+		font-style:normal;
+		font-weight:bold;
+		cursor:url(../images/mac_cursor_pointer.png), auto;
+		padding:3px;
+		display:none;
+	}
+	.contents_header_controlbar i:nth-of-type(1) {left:2px; top:0px; font-size:12px;}
+	.contents_header_controlbar i:nth-of-type(2) {left:28px; top:-4px; font-size:18px;}
+	.contents_header_controlbar i:nth-of-type(3) {left:54px; top:-4px;}
+	.contents_header_controlbar i:nth-of-type(3) img {width:7px;}
+	
+	.contents_header_title {position:absolute; left:472px; top:16px;}
+	.contents_header_title li {font-size:20px; font-weight:bold;}
+	
+	.contents_header_category
+	{
+		position:absolute; right:30px; top:15px;
+		border:1px solid #505050;
+		border-radius:10px;
+		overflow:hidden;
+	}
+	.contents_header_category li
+	{
+		float:left;
+		border-left:1px solid #505050;
+		background:#646464;
+		color:#fff;
+		font-size:16px;
+		font-weight:bold;
+		cursor:url(../images/mac_cursor_pointer.png), auto;
+		padding:4px 18px 2px 18px;
+		transition:all 0.3s;
+	}
+	.contents_header_category li:nth-of-type(1) {border:none;}
+	.contents_header_category li:hover {background:#bebebe; color:#323232;}
+	.contents_header_category li.dark {background:#bebebe; color:#323232;}
+
+	/* ─── 창 화면 (하단) ─── */
+	#contents_container
+	{
+		width:1000px; height:560px;
+		position:relative;
+		background:#2d2d2d;
+		border-left:1px solid rgba(100,100,100,0.4);
+		border-bottom-left-radius:10px;
+		border-bottom-right-radius:10px;
+		box-shadow:2px 2px 10px 0px #000;
+		overflow:hidden;
+		transition:all 0.5s;
+	}
+
+/* ─── 크롬 화면 (세부) ─── */
+#redesign
+{
+	width:100%; height:100%;
+	position:fixed; top:40px;
+	background:#fff;
+	border-radius:10px;
+	z-index:1500;
+	display:none;
+}
+
+	#chrome_header
+	{
+		width:100%; height:42px;
+		position:relative;
+		background:#aaaaaa;
+		border-top-left-radius:10px;
+		border-top-right-radius:10px;
+		border-bottom:2px solid #bebebe;
+		transition:all 0.5s;
+	}
+	.chrome_header_controlbar
+	{
+		width:69px; height:16px;
+		position:absolute; left:0; top:0;
+		margin-top:14px;
+		margin-left:16px;
+	}
+	.chrome_header_controlbar span
+	{
+		width:14px; height:14px; float:left;
+		background:rgba(100,100,100,0.8);
+		border:1px solid #646464;
+		border-radius:50px;
+		cursor:url(../images/mac_cursor_pointer.png), auto;
+		margin-right:9px;
+	}
+	.chrome_header_controlbar span:nth-of-type(1) {background:#ff4f4b;}
+	.chrome_header_controlbar span:nth-of-type(2) {background:#e3b826;}
+	.chrome_header_controlbar span:nth-of-type(3) {background:#49ba26; margin-right:0;}
+	
+	.chrome_header_controlbar i
+	{
+		width:10px; height:10px;
+		position:absolute;
+		color:#000;
+		font-style:normal;
+		font-weight:bold;
+		cursor:url(../images/mac_cursor_pointer.png), auto;
+		padding:3px;
+		display:none;
+	}
+	.chrome_header_controlbar i:nth-of-type(1) {left:1.5px; top:-1px; font-size:12px;}
+	.chrome_header_controlbar i:nth-of-type(2) {left:26px; top:-5px; font-size:18px;}
+	.chrome_header_controlbar i:nth-of-type(3) {left:51px; top:-5px;}
+	.chrome_header_controlbar i:nth-of-type(3) img {width:7px;}
+	
+	.chrome_header_category {width:1000px; height:35px; position:absolute; left:110px; top:9px;}
+	.chrome_header_category li {height:0; position:absolute; background:#aaa;}
+	.tab_one
+	{
+		width:214px;
+		z-index:1600;
+		border-bottom:35px solid #f0f0f0;
+		border-left:15px solid transparent;
+		border-right:15px solid transparent;
+	}
+	.tab_two
+	{
+		width:214px;
+		z-index:1500;
+		border-bottom:35px solid #d2d2d2;
+		border-left:15px solid transparent;
+		border-right:15px solid transparent;
+	}
+	.tab_three
+	{
+		width:214px;
+		background:#aaa;
+		z-index:1400;
+		border-bottom:35px solid #d2d2d2;
+		border-left:15px solid transparent;
+		border-right:15px solid transparent;
+	}
+	.tab_plus
+	{
+		width:34px; height:20px;
+		position:absolute; left:740px; top:9px;
+		background:#d2d2d2;
+		border-radius:5px;
+		transform:skewX(25deg);
+	}
+	
+	.chrome_header_category_name
+	{
+		position:absolute; left:122px; top:10px;
+		cursor:url(../images/mac_cursor_pointer.png), auto;
+		z-index:1700;
+	}
+	.chrome_header_category_name a
+	{
+		width:204px; height:16px;
+		position:absolute;
+		color:#000;
+		font-size:16px;
+		font-weight:bold;
+		padding:7px;
+		margin-right:24px;
+	}
+	.chrome_header_category_name a img {width:20px; margin-right:6px;}
+	.chrome_header_category_name a b, .chrome_header_category_name a strong {color:#000;}
+	.chrome_header_category_name a span {float:right; color:#aaa; font-size:14px;}
+	
+	#chrome_searchbar
+	{
+		width:1920px; height:46px;
+		background:#f0f0f0;
+		border-bottom:2px solid #bebebe;
+	}
+	.chrome_searchbar_icon {padding:12px;}
+	.chrome_searchbar_icon img {width:22px; margin:0 4px;}
+	.chrome_searchbar_icon img:nth-of-type(3) {cursor:url(../images/mac_cursor_pointer.png), auto;}
+	.search_bar
+	{
+		width:1750px; height:30px;
+		position:absolute; left:120px; top:53px;
+		background:#fff;
+		color:#000;
+		font-size:18px;
+		font-weight:bold;
+		border:2px solid #c8c8c8;
+		border-radius:5px;
+		padding-left:34px;
+	}
+	.search_bar:focus {outline:2px solid #407fc3;}
+	.search_icon {width:16px; position:absolute; left:130px; top:60px; z-index:1500;}
+	.list_icon {width:28px; position:absolute; left:1878px; top:54px; cursor:url(../images/mac_cursor_pointer.png), auto;}
+	
+	#chrome_container
+	{
+		width:100%; height:800px;
+		position:relative;
+		background:#fff;
+		border-bottom-left-radius:10px;
+		border-bottom-right-radius:10px;
+		overflow:auto;
+		transition:all 0.5s;
+	}
+	#chrome_container::-webkit-scrollbar {width:15px;}
+	#chrome_container::-webkit-scrollbar-thumb {
+    background-color: #bebebe;
+    background-clip: padding-box;
+	border-radius: 12px;
+    border: 4px solid transparent;
+	}
+	#chrome_container::-webkit-scrollbar-track {
+		background-color: #fafafa;
+		border-radius: 12px;
+		box-shadow: inset 0px 0px 10px #f0f0f0;
+	}
+	
+/* 미디어 쿼리 부분 */
+@media (min-width:1281px) { /* 1281px 이상 해상도 데스크탑 */
+	#login>img {top:-40px;}
+	#login_img {left:47.5%;}
+	#login_ul {left:42%;}
+	#about_portfolio {left:15%;}
+	#contents {left:25%;}
+	#dock {left:33%; bottom:3%;}
+}
+
+@media (min-width:1025px) and (max-width:1280px) { /* 랩탑, 데스크탑 */
+	#login>img {top:-40px;}
+	#about_portfolio {left:15%;}
+	#dock {left:16%; bottom:3%;}
+}
+
+@media (min-width:768px) and (max-width:1024px) { /* 태블릿, 아이패드(세로) */
+	#loading img {left:42%;}
+	#loading_bar {left:34%;}
+	
+	#login>img {top:-40px;}
+	#login_img {left:44%;}
+	#login_ul, #login_ul_name {left:30%;}
+	#about_portfolio {left:15%;}
+	#dock {left:10%; bottom:3%;}
+	#contents {left:0%; top:3.5%;}
+	#contents_header {width:77%;}
+	#contents_container {width:77%; height:900px; overflow:auto;}
+	#contents_container::webkit-scrollbar {display:none;}
+}
+
+@media (min-width:768px) and (max-width:1024px) and (orientation:landscape) { /* 태블릿, 아이패드(가로) */
+	#loading img {left:44%; top:36%;}
+	#loading_bar {left:38%; top:66%;}
+
+	#login>img {top:-40px;}
+	#login_img {left:46%; top:36%;}
+	#login_ul, #login_ul_name {left:35%;}
+	#about_portfolio {left:15%;}
+	#dock {left:18%; bottom:3%;}
+	#contents {left:0%; top:3.5%;}
+	#contents_header {width:102%;}
+	#contents_container {width:102%; height:900px; overflow:auto;}
+}
+
+@media (min-width:480px) and (max-width:767px) { /* 저해상도 태블릿, 모바일(가로) */
+	#loading img {left:36%;}
+	#loading_bar {left:24%;}
+	
+	#login>img {top:-40px;}
+	#login_img {left:40%;}
+	#login_ul, #login_ul_name {width:380px; left:24%;}
+	#login_ul li {margin-right:70px;}
+	#login_ul i {left:-26px;}
+	#login_ul i:nth-of-type(2) {left:54px;}
+	#login_ul i:nth-of-type(3) {left:154px;}
+	#login_ul_name li {margin-right:67px;}
+	
+	#header_menubar {display:none;}
+	#about_portfolio {left:0%; top:100%;}
+	#contents {left:0%; top:3.5%;}
+	#contents_header {width:50%;}
+	#contents_container {width:50%; height:900px; overflow:auto;}
+	#contents_container::webkit-scrollbar {display:none;}
+	
+	#dock {display:none;}
+}
+
+@media (min-width:320px) and (max-width:479px) { /* 모바일(세로) */
+	body {font-family:'AppleSDGothicNeoR';
+	src:url(../family/AppleSDGothicNeo/AppleSDGothicNeoR.ttf) format('truetype');}
+	#loading img {left:32%; top:200px;}
+	#loading_bar {left:24%; top:450px;}
+	#loading_bar li {width:200px;}
+
+	#login>img {top:-40px;}
+	#login_img {left:36.5%; top:180px;}
+	#login_ul {width:320px; left:18%;}
+	#login_ul li {margin-right:60px;}
+	#login_ul i {left:-26px;}
+	#login_ul i:nth-of-type(2) {left:64px;}
+	#login_ul i:nth-of-type(3) {left:174px;}
+	#login_ul_name {width:350px; left:18%;}
+	#login_ul_name li {margin-right:57px;}
+
+	#header_menubar {display:none;}
+	
+	#about_portfolio {left:0%; top:100%;}
+	#about_portfolio_header {width:375px;}
+	#about_portfolio_container {width:375px; height:570px;}
+	.about_portfolio_header_title {left:110px;}
+	
+	#contents {left:0%; top:3.5%;}
+	#contents_header {width:50%;}
+	.contents_header_category {right:129px;}
+	.contents_header_category li {word-spacing:-2px; padding:4px 8px 2px 8px;}
+	#contents_container {width:50%; height:1100px; overflow:auto;}
+	#contents_container::webkit-scrollbar {display:none;}
+	#dock {display:none;}
+}

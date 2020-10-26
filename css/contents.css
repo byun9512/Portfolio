@@ -1,0 +1,267 @@
+/* ─── 프로필 ─── */
+#profile_container_contents {overflow:hidden; transition:all 0.5s;}
+	#profile_container_rotate
+	{
+		width:1100px; height:1100px;
+		position:absolute; left:-90px; top:-100px;
+		background:rgba(0,0,0,0.3);
+		transform:rotate(-45deg);
+		border-radius:1000px;
+		box-shadow:1px 1px 30px 10px #000 inset;
+	}
+	#profile_container_contents>div
+	{
+		width:200px; height:200px;
+		position:absolute; left:60px; top:140px;
+		border:10px solid #fff;
+		border-radius:100px;
+		overflow:hidden;
+	}
+	#profile_container_contents>div>img {width:200px;} 
+	#profile_container_contents li {font-size:18px;}
+	#profile_container_contents span {font-size:24px; font-weight:bold;}
+	#profile_container_contents h1 {padding-bottom:10px;}
+
+	.profile_part {position:absolute; left:340px; top:110px;}
+	.experience_part {position:absolute; left:620px; top:130px;}
+	.experience_part li {padding-bottom:4px;}
+	.character_part {position:absolute; left:340px; top:290px;}
+	.character_part li {padding-bottom:4px;}
+	.footer_part {width:300px; position:absolute; left:140px; top:530px; text-align:center;}
+	.footer_part li {color:#646464;}
+	
+	
+/* ─── 스킬 ─── */
+#skill_container
+{
+	width:1000px; height:560px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+	overflow:hidden;
+	display:none;
+}
+	#skill_container_rotate
+	{
+		width:760px; height:1500px;
+		position:absolute; left:100px; top:-500px;
+		background:rgba(0,0,0,0.3);
+		transform:rotate(-40deg);
+		box-shadow:1px 1px 30px 10px #000 inset;
+	}
+	
+	#skill_container_contents
+	{
+		width:560px; height:560px;
+		position:absolute; left:220px; top:0;
+		padding:40px 0;
+	}
+	.skill_logo li img {width:50px; margin-left:30px; margin-bottom:30px;}
+	.skill_name {position:absolute; left:124px; top:50px;}
+	.skill_name p {font-size:20px; margin-bottom:53px;}
+
+	.skill_bar_blank {position:absolute; left:120px; top:79px;}
+	.skill_bar_blank span
+	{
+		width:400px; height:10px; float:left;
+		background:rgba(100,100,100,0.8);
+		border-radius:10px;
+		margin-bottom:70px;
+	}
+
+	.skill_bar span {width:0; height:10px; position:absolute; left:120px; border-radius:10px;}
+	.skill_bar span:nth-of-type(1) {top:79px; background:#2da9ff;}
+	.skill_bar span:nth-of-type(2) {top:159px; background:#ff9b00;}
+	.skill_bar span:nth-of-type(3) {top:239px; background:#f06529;}
+	.skill_bar span:nth-of-type(4) {top:319px; background:#33a6d8;}
+	.skill_bar span:nth-of-type(5) {top:399px; background:#f9dd33;}
+	.skill_bar span:nth-of-type(6) {top:479px; background:#ec4747;}
+
+	.skill_percent {position:absolute; right:50px; top:46px;}
+	.skill_percent p {font-size:24px; font-weight:bold; margin-bottom:47px;}
+	
+	
+/* ─── 주소 ─── */
+#address_container {display:none;}
+	#address_container_rotate
+	{
+		width:740px; height:740px;
+		position:absolute; left:-240px; top:-100px;
+		background:#2d2d2d;
+		border-radius:700px;
+		box-shadow:1px 1px 30px 10px #000 inset;
+		z-index:200;
+	}
+	#address_container_contents
+	{
+		width:380px; height:330px;
+		position:absolute; left:40px; top:100px;
+		z-index:300;
+	}
+	#address_container_contents h2
+	{
+		color:#fff;
+		border-bottom:1px solid #999;
+		padding-bottom:10px;
+		margin-left:10px;
+	}
+	#address_container_contents p {color:#fff; margin:16px 0px; padding-left:30px;}
+	#address_container_contents p small {color:#999;}
+	#address_container_contents .homepage a {color:#0080d4;}
+	
+	.address_icon li
+	{
+		width:15px; height:20px;
+		position:absolute; left:0; top:64px;
+		background:url(../images/address_ul.png) no-repeat;
+		margin-bottom:30px;
+	}
+	.address_icon li:nth-of-type(2) {top:114px; background-position:-15px 0;}
+	.address_icon li:nth-of-type(3) {top:160px; background-position:-30px 0;}
+	.address_icon li:nth-of-type(4) {top:210px; background-position:-45px 0;}
+	.address_icon li:nth-of-type(5) {top:268px; background-position:-60px 0;}
+	.address_icon img
+	{
+		width:30px;
+		position:absolute; left:730px; top:50px;
+		animation:bounce 0.7s infinite alternate;
+	}
+	@keyframes bounce
+	{
+		0% {transform:translateY(-10px);}
+		100% {transform:translateY(0px);}
+	}
+	
+	.address_map
+	{
+		width:1000px; height:560px; position:absolute; left:0; top:0;
+		background:url(../images/address.jpg) no-repeat;
+		background-size:cover;
+	}
+
+/* ─── 연락처 ─── */
+#contact_container
+{
+	width:1000px; height:560px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+	overflow:hidden;
+	display:none;
+}
+	#contact_container>img
+	{
+		width:1000px;
+		background-repeat:no-repeat;
+		background-size:cover;
+		transition:all 0.5s;
+	}
+	#contact_container>img:nth-of-type(2) {position:absolute; top:-200px;}
+	#contact_container_contents
+	{
+		width:460px; height:240px;
+		position:absolute; left:210px; top:90px;
+		background:rgba(40,40,40,0.5);
+		border-radius:20px;
+		box-shadow:1px 1px 30px 0px #000;
+		padding:60px;
+	}
+	.contact_comment {text-align:center; padding-bottom:50px;}
+	.contact_comment li {font-size:28px;}
+
+	.contact_info {text-align:center;}
+	.contact_info li {font-size:20px;}
+	.contact_info span {font-size:24px; font-weight:bold;}
+
+/* 미디어 쿼리 부분 */
+@media (min-width:1281px) { /* 1281px 이상 해상도 데스크탑 */
+	.footer_part {width:75%;}
+}
+
+@media (min-width:1025px) and (max-width:1280px) { /* 랩탑, 데스크탑 */
+	.footer_part {width:75%;}
+}
+
+@media (min-width:768px) and (max-width:1024px) { /* 태블릿, 아이패드(세로) */
+	#profile_container_rotate {width:800px; height:800px; left:-70px;}
+	.profile_part {left:380px; top:70px;}
+	.experience_part {left:380px; top:430px;}
+	.character_part {left:380px; top:250px;}
+	.footer_part {width:70%; left:13%; top:80%;}
+	
+	#skill_container_contents {left:13%; top:160px;}
+	
+	.address_map {width:1300px; height:860px; background:url(../images/address.png) no-repeat;}
+	.address_icon img {left:282px; top:530px;}
+	
+	#contact_container_contents {left:13%; top:20%;}
+	#contact_container>img {height:1080px;}
+}
+
+@media (min-width:768px) and (max-width:1024px) and (orientation:landscape) { /* 태블릿, 아이패드(가로) */
+	#profile_container_rotate {width:800px; height:800px; left:-70px;}
+	.profile_part {left:380px; top:120px;}
+	.experience_part {left:660px; top:150px;}
+	.character_part {left:380px; top:300px;}
+	.footer_part {width:80%; left:10%; top:58%;}
+	
+	#skill_container_contents {left:22%; top:20px;}
+	
+	.address_map
+	{
+		width:1300px; height:800px;
+		left:0px; top:-100px;
+		background:url(../images/address_orientation.png) no-repeat;
+	}
+	.address_icon img {left:570px; top:100px;}
+	
+	#contact_container_contents {left:22%; top:12%;}
+	#contact_container>img {width:100%; height:1080px;}
+}
+
+@media (min-width:480px) and (max-width:767px) { /* 저해상도 태블릿, 모바일(가로) */
+	.contents_header_title {display:none;}
+	
+	#profile_container_contents>div {display:none;}
+	.profile_part {left:120px; top:80px;}
+	.experience_part {left:120px; top:440px;}
+	.character_part {left:120px; top:260px;}
+	.footer_part {width:70%; left:70px; top:83%;}
+	
+	#skill_container_contents {left:10px; top:160px;}
+	.skill_bar_blank span {width:300px;}
+	.skill_percent {right:120px;}
+	
+	.address_map {width:1300px; height:860px; background:url(../images/address.png) no-repeat;}
+	.address_icon img {left:282px; top:530px;}
+	
+	#contact_container_contents {width:280px; height:440px; left:10%;}
+	#contact_container>img {height:1080px;}
+	.contact_comment {width:234px; margin:30px 0 0 26px;}
+}
+
+@media (min-width:320px) and (max-width:479px) { /* 모바일(세로) */
+	.contents_header_title {display:none;}
+	
+	#profile_container {width:380px; height:1400px; overflow:hidden;}
+	#profile_container_rotate {width:700px; height:700px; left:-300px; top:30px;}
+	#profile_container_contents>div {display:none;}
+	.profile_part {left:50px; top:80px;}
+	.experience_part {left:50px; top:440px;}
+	.character_part {left:50px; top:260px;}
+	.footer_part {width:57%; left:50px; top:750px;}
+	
+	#skill_container {width:380px; height:1100px;}
+	#skill_container_rotate {width:550px; height:550px; left:-200px; top:30px;}
+	#skill_container_contents {left:0; top:0;}
+	.skill_bar_blank span {width:230px;}
+	.skill_percent {right:210px;}
+	
+	#address_container_contents {left:20px;}
+	.address_map {width:500px; height:1400px; left:-100px; top:30px; background:url(../images/address.png) no-repeat;}
+	.address_icon img {left:202px; top:550px;}
+	
+	#contact_container {width:380px;}
+	#contact_container_contents {width:205px; height:390px; left:5%; top:30px;}
+	#contact_container>img {width:380px; height:980px;}
+	.contact_comment {width:234px; position:relative; left:-10px;}
+	.contact_info {width:300px; position:relative; left:-40px;}
+}
